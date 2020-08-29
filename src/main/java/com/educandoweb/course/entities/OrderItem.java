@@ -12,7 +12,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @Table(name = "tb_order_item")
 public class OrderItem implements Serializable{
-	
 	private static final long serialVersionUID = 1L;
 
 	@EmbeddedId
@@ -23,7 +22,7 @@ public class OrderItem implements Serializable{
 	
 	public OrderItem() {
 	}
-	
+
 	public OrderItem(Order order, Product product, Integer quantity, Double price) {
 		super();
 		id.setOrder(order);
@@ -32,6 +31,7 @@ public class OrderItem implements Serializable{
 		this.price = price;
 	}
 	
+	@JsonIgnore
 	public Order getOrder() {
 		return id.getOrder();
 	}
@@ -47,7 +47,7 @@ public class OrderItem implements Serializable{
 	public void setProduct(Product product) {
 		id.setProduct(product);
 	}
-	
+
 	public Integer getQuantity() {
 		return quantity;
 	}

@@ -11,7 +11,7 @@ import com.educandoweb.course.repositories.CategoryRepository;
 
 @Service
 public class CategoryService {
-	
+
 	@Autowired
 	private CategoryRepository repository;
 	
